@@ -1,46 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="assets/CSS/style.css">
-    <title>Train Times</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="assets/CSS/style.css">
+  <title>Train Times</title>
 </head>
+
 <body>
-    <div class="container">
+  <div class="container">
 
-        <div class="row">
-            <div class="col-12 jumbotron">
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-12 card">
-                <div class="card-header">
-                </div>
-                <div class="card-body">
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-12 card">
-                    <div class="card-header">
-                    </div>
-                    <div class="card-body">
-                    </div>
-            </div>
-        </div>
-        
+    <div class="row">
+      <div class="col-12 jumbotron text-center">
+        <h1>The North Western Railway</h1>
+        <h5>A Division of the Island of Sodor Transit Authority</h5>
+        <p><i>Commissioner Sir Topham Hatt</i></p>
+      </div>
     </div>
 
-    <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
-    <script src="assets/JavaScript/logic.js"></script>
+    <div class="row mb-3">
+      <div class="col-12 card px-0">
+        <div class="card-header text-center">
+          <h5>Departures</h5>
+        </div>
+        <div class="card-body">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Train Name</th>
+                <th scope="col">Destination</th>
+                <th scope="col">Frequency(min)</th>
+                <th scope="col">Next Train</th>
+                <th scope="col">Minutes Away</th>
+              </tr>
+            </thead>
+            <tbody class="table-striped">
+              <tr>
+                <td>Thomas</td>
+                <td>Ffarquhar</td>
+                <td>60</td>
+                <!-- Need to dynamically create the next two <td> elements -->
+                <td>####</td>
+                <td>####</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-12 card px-0">
+        <div class="card-header text-center">
+          <h5>Schedule Train</h5>
+        </div>
+        <div class="card-body">
+          <form>
+              <div class="form-group">
+                  <label for="exampleFormControlSelect1">Train Name</label>
+                  <select class="form-control" id="train-name-input">
+                    <option>Edward</option>
+                    <option>Gordon</option>
+                    <option>Henry</option>
+                    <option>James</option>
+                    <option>Toby</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Destination</label>
+                    <select class="form-control" id="destination-input">
+                      <option>Arlesdale Road</option>
+                      <option>Peel Godred</option>
+                      <option>Culdee Fell Summit</option>
+                      <option>Barrow</option>
+                      <option>Norramby</option>
+                      <option>Kirk Roran</option>
+                      <option>Ballahoo</option>
+                      <option>Brendam</option>
+                      <option>Tidmouth</option>
+                      <option>Skarloey</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">First Departure</label>
+                    <select class="form-control" id="first-departure-input">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Frequency (min)</label>
+                    <select class="form-control" id="frequency-input">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
+  <script src="assets/JavaScript/logic.js"></script>
 </body>
+
 </html>
