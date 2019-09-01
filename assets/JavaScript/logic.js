@@ -14,6 +14,18 @@ for (i = 0; i < destinations.length; i++) {
     $("#destination-input").append(destinationOption);
 };
 
+//Variable for the time selection input
+var timepicker = new TimePicker('time', {
+  lang: 'en',
+  theme: 'dark'
+});
+timepicker.on('change', function(evt) {
+  
+  var value = (evt.hour || '00') + ':' + (evt.minute || '00');
+  evt.element.value = value;
+
+});
+
 //Initialize Firebase
 const firebaseConfig = {
     apiKey: "AIzaSyAvjILnVHNxxPPiHgFUd5wG-C8cO5nHj_M",
@@ -30,4 +42,7 @@ firebase.initializeApp(firebaseConfig);
 //Variable to store database
 var database = firebase.database();
 
-//
+//Function to write to database new train schedules
+
+
+//Function to read train schedules and display in the HTML table

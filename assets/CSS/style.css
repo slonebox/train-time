@@ -1,0 +1,8 @@
+.time-input {
+    display: inline-block;
+}
+
+#schedule-train-button {
+    position: absolute;
+    bottom: 0;
+}
