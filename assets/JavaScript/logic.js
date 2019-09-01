@@ -40,11 +40,6 @@ $("#schedule-train-button").on("click", function (event){
   timeInput = $("#hours-input").val().trim() + ":" + $("#minutes-input").val().trim();
   frequencyInput = $("#frequency-input").val().trim();
 
-  console.log(trainInput);
-  console.log(destinationInput);
-  console.log(timeInput);
-  console.log(frequencyInput);
-
   //Create new object
   newTrain = {
     name: trainInput,
@@ -53,10 +48,37 @@ $("#schedule-train-button").on("click", function (event){
     frequency: frequencyInput
   };
 
-  console.log(newTrain);
-
+  //Write new trip to the database
   database.ref().push(newTrain);
 
-})
+});
 
-//Function to read train schedules and display in the HTML table
+//Function to read train schedules and display in the HTML table whenever a new one is added
+
+database.ref().on("child_added", function(snapshot) {
+
+  //Store snapshot properties in variables
+  var snapshotName = snapshot.val().name;
+  var snapshotDestination = snapshot.val().destination;
+  var snapshotTime = snapshot.val().time;
+  var snapshotFrequency = snapshot.val().frequency;
+
+  console.log(snapshotName);
+  console.log(snapshotDestination);
+  console.log(snapshotTime);
+  console.log(snapshotFrequency);
+
+  //Create new row on the timetable
+  var newRow = $("<tr>").append(
+    $("<td>").text(snapshotName),
+    $("<td>").text(snapshotDestination),
+    $("<td>").text(snapshotFrequency),
+    $("<td>").text("#####"),
+    $("<td>").text("#####"),
+  );
+
+  console.log(newRow);
+
+  $("#time-table > tbody").append(newRow);
+
+});
