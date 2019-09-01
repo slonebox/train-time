@@ -81,9 +81,9 @@
                 <label for="exampleFormControlSelect1">First Departure</label>
                 <div>
                   <input id="hours-input" class="form-control time-input col-5" type="number" step="1" min="0" max="23"
-                    placeholder="23" required> :
+                  required> :
                   <input id="minutes-input" class="form-control time-input col-5" type="number" step="1" min="0"
-                    max="59" placeholder="00" required>
+                    max="59" default="00" required>
                 </div>
               </div>
               <div class="col-4">
@@ -100,12 +100,14 @@
     </div>
 
   </div>
-
-  <script src="https://www.gstatic.com/firebasejs/6.4.2/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/6.4.2/firebase-database.js"></script>
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-app.js"></script>
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-database.js"></script>
+  <!-- jQuery Library -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
+  <!-- Custom JS file -->
   <script src="assets/JavaScript/logic.js"></script>
 
 </html>
