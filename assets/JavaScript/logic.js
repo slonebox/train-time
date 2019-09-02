@@ -1,3 +1,20 @@
+//Variables for the Time and Date
+var datetime = null,
+        date = null;
+
+var update = function () {
+    date = moment(new Date())
+    datetime.html(date.format('dddd, MMMM D, YYYY,  hh:mm:ss'));
+};
+
+$(document).ready(function(){
+    datetime = $('#current-time-div')
+    update();
+    setInterval(update, 1000);
+});
+
+console.log("DATE TIME: " + datetime);
+
 //Variables to store trains and destinations users can select
 var trains = ["Bill", "Ben", "Diesel", "Donald", "Douglas", "Duck", "Edward", "Emily", "Gordon", "Henry", "James", "Oliver", "Percy", "Rebecca", "Thomas", "Toby"];
 
@@ -33,6 +50,8 @@ var database = firebase.database();
 //Function to write to database new train schedules
 $("#schedule-train-button").on("click", function (event){
   event.preventDefault();
+
+
 
   //Select user inputs
   trainInput = $("#train-name-input").val().trim();
@@ -82,3 +101,5 @@ database.ref().on("child_added", function(snapshot) {
   $("#time-table > tbody").append(newRow);
 
 });
+
+console.log();

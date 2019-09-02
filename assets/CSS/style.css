@@ -2,6 +2,13 @@
     display: inline-block;
 }
 
+#current-time-div, #time-row {
+    z-index: 10;
+    position: sticky;
+    top: 0;
+    font-size: 20px;
+}
+
 #schedule-train-button {
     position: absolute;
     bottom: 0;

@@ -16,6 +16,7 @@
 <body>
   <div class="container">
 
+  <!-- Jumbotron -->
     <div class="row">
       <div class="col-12 jumbotron text-center">
         <h1>The North Western Railway</h1>
@@ -24,6 +25,13 @@
       </div>
     </div>
 
+    <!-- Display for Current Time -->
+    <div class="row mb-3" id="time-row">
+      <div class="col-12 card p-2 text-center" id="current-time-div">
+      </div>
+    </div>
+
+    <!-- Display for Train Time Table -->
     <div class="row mb-3">
       <div class="col-12 card px-0">
         <div class="card-header text-center">
@@ -41,20 +49,13 @@
               </tr>
             </thead>
             <tbody class="table-striped">
-              <tr>
-                <td>Thomas</td>
-                <td>Ffarquhar</td>
-                <td>60</td>
-                <!-- Need to dynamically create the next two <td> elements -->
-                <td>####</td>
-                <td>####</td>
-              </tr>
             </tbody>
           </table>
         </div>
       </div>
     </div>
 
+    <!-- Form for Scheduling Trains -->
     <div class="row mb-3">
       <div class="col-12 card px-0">
         <div class="card-header text-center">
@@ -80,10 +81,11 @@
               <div class="col-4">
                 <label for="exampleFormControlSelect1">First Departure (hh:mm) </label>
                 <div>
+                  <!-- JS ensures two digits are always input for hours and minutes, avoiding inputs like 10:1 or 2:5, et. al. -->
                   <input id="hours-input" class="form-control time-input col-5" type="number" step="1" min="00" max="23"
-                  value="00" pattern="{2}" required> :
+                    value="00" required onchange="if(parseInt(this.value,10)<10)this.value='0'+this.value;"> :
                   <input id="minutes-input" class="form-control time-input col-5" type="number" step="1" min="0"
-                    max="59" pattern="{2}" value="00" required>
+                    max="59" value="00" required onchange="if(parseInt(this.value,10)<10)this.value='0'+this.value;">
                 </div>
               </div>
               <div class="col-4">
@@ -98,8 +100,8 @@
         </div>
       </div>
     </div>
-
   </div>
+
   <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-app.js"></script>
   <!-- Add Firebase products that you want to use -->
