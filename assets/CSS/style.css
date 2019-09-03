@@ -9,7 +9,7 @@
     font-size: 20px;
 }
 
-#schedule-train-button {
+#schedule-train-button, #frequency-input {
     position: absolute;
     bottom: 0;
 }

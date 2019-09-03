@@ -4,7 +4,7 @@ var datetime = null,
 
 var update = function () {
     date = moment(new Date())
-    datetime.html(date.format('dddd, MMMM D, YYYY,  hh:mm:ss'));
+    datetime.html(date.format('dddd, MMMM D, YYYY,  HH:mm:ss'));
 };
 
 $(document).ready(function(){
@@ -12,8 +12,6 @@ $(document).ready(function(){
     update();
     setInterval(update, 1000);
 });
-
-console.log("DATE TIME: " + datetime);
 
 //Variables to store trains and destinations users can select
 var trains = ["Bill", "Ben", "Diesel", "Donald", "Douglas", "Duck", "Edward", "Emily", "Gordon", "Henry", "James", "Oliver", "Percy", "Rebecca", "Thomas", "Toby"];
@@ -51,8 +49,6 @@ var database = firebase.database();
 $("#schedule-train-button").on("click", function (event){
   event.preventDefault();
 
-
-
   //Select user inputs
   trainInput = $("#train-name-input").val().trim();
   destinationInput = $("#destination-input").val().trim();
@@ -82,11 +78,6 @@ database.ref().on("child_added", function(snapshot) {
   var snapshotTime = snapshot.val().time;
   var snapshotFrequency = snapshot.val().frequency;
 
-  console.log(snapshotName);
-  console.log(snapshotDestination);
-  console.log(snapshotTime);
-  console.log(snapshotFrequency);
-
   //Create new row on the timetable
   var newRow = $("<tr>").append(
     $("<td>").text(snapshotName),
@@ -96,10 +87,12 @@ database.ref().on("child_added", function(snapshot) {
     $("<td>").text("#####"),
   );
 
-  console.log(newRow);
-
   $("#time-table > tbody").append(newRow);
 
 });
 
-console.log();
+// Function that calculates all train departures times based on the first departure and departure frequency and then adds them to an array
+$("#schedule-train-button").on("click", function (event){
+  event.preventDefault();
+
+});
