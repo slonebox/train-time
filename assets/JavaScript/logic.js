@@ -52,14 +52,38 @@ $("#schedule-train-button").on("click", function (event){
   //Select user inputs
   trainInput = $("#train-name-input").val().trim();
   destinationInput = $("#destination-input").val().trim();
-  timeInput = $("#hours-input").val().trim() + ":" + $("#minutes-input").val().trim();
-  frequencyInput = $("#frequency-input").val().trim();
+  hoursInput = $("#hours-input").val().trim();
+  minutesInput = $("#minutes-input").val().trim();
+  frequencyInput = Math.floor($("#frequency-input").val().trim());
+
+  //Calculates all train departures times based on the first departure and departure frequency and then adds them to an array
+  var departureTimes = [];
+  //Calculates start time as a specific minute of the whole day
+  var startTime = hoursInput + ":" + minutesInput;
+  console.log("START TIME: " + startTime);
+
+  const timelineLabels = (desiredStartTime, interval, period) => {
+    const periodsInADay = moment.duration(1, 'day').as(period);
+  
+    const timeLabels = [];
+    const startTimeMoment = moment(desiredStartTime, 'HH:mm');
+    for (let i = 0; i <= periodsInADay; i += interval) {
+      startTimeMoment.add(i === 0 ? 0 : interval, period);
+      timeLabels.push(startTimeMoment.format('HH:mm'));
+    }
+  
+    return timeLabels;
+  };
+  departureTimes = timelineLabels(startTime, frequencyInput, 'minutes');
+  console.log(departureTimes);
+
 
   //Create new object
   newTrain = {
     name: trainInput,
     destination: destinationInput,
-    time: timeInput,
+    //Input for first train
+    //Input for array of all departure times
     frequency: frequencyInput
   };
 
@@ -88,11 +112,5 @@ database.ref().on("child_added", function(snapshot) {
   );
 
   $("#time-table > tbody").append(newRow);
-
-});
-
-// Function that calculates all train departures times based on the first departure and departure frequency and then adds them to an array
-$("#schedule-train-button").on("click", function (event){
-  event.preventDefault();
 
 });
