@@ -10,7 +10,7 @@ body {
     background-repeat: no-repeat;
     background-blend-mode: color-burn;
     color: #ffe940;
-    text-shadow: 4px 2px 2px rgba(0, 0, 0, 0.6);
+    text-shadow: -1px 0px #f35844, 0px -1px #f35844, 1px 0px #f35844, 0px 1px #f35844, 4px 2px 2px rgba(0, 0, 0, 0.6);
     border-radius: 0;
     box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
 }
