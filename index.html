@@ -10,6 +10,7 @@
   <link href="http://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.css" rel="stylesheet" />
   <script src="http://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.js"></script>
   <link rel="stylesheet" type="text/css" href="assets/CSS/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Bitter:400,700|Kelly+Slab&display=swap" rel="stylesheet">
   <title>Train Times</title>
 </head>
 
@@ -19,20 +20,22 @@
   <!-- Jumbotron -->
     <div class="row">
       <div class="col-12 jumbotron text-center">
-        <h1>The North Western Railway</h1>
-        <h5>A Division of the Island of Sodor Transit Authority</h5>
-        <p><i>Commissioner Sir Topham Hatt</i></p>
+        <div id="j-text">
+        <h1><strong>The North Western Railway</strong></h1>
+        <h5><strong>A Division of the Island of Sodor Transit Authority</strong></h5>
+        <h6>Commissioner Sir Topham Hatt</h6>
+        </div>
       </div>
     </div>
 
     <!-- Display for Current Time -->
     <div class="row mb-3" id="time-row">
-      <div class="col-12 card p-2 text-center" id="current-time-div">
+      <div class="col-12 card p-2 text-center mx-auto" id="current-time-div">
       </div>
     </div>
 
     <!-- Display for Train Time Table -->
-    <div class="row mb-3">
+    <div class="row mb-3" id="departures">
       <div class="col-12 card px-0">
         <div class="card-header text-center">
           <h5>Departures</h5>
@@ -56,7 +59,7 @@
     </div>
 
     <!-- Form for Scheduling Trains -->
-    <div class="row mb-3">
+    <div class="row mb-3" id="train-scheduler">
       <div class="col-12 card px-0">
         <div class="card-header text-center">
           <h5>Schedule Train</h5>
