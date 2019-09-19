@@ -3,7 +3,7 @@ body {
 }
 
 .jumbotron {
-    background-image: url(/assets/Images/thomas_background.png);
+    background-image: url(https://slonebox.github.io/train-time/assets/Images/thomas_background.png);
     background-size: 120%;
     background-position-y: 55%;
     background-position-x: 100%;
@@ -84,6 +84,16 @@ body {
 
 .card-header:first-child {
     border-radius: 0;
+}
+
+#schedule-train-button {
+    background-color: #4fb3e6;
+    border: 1px solid #4fb3e6;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+#schedule-train-button:hover {
+    box-shadow: 10px 10px rgba(255, 233, 64, 0.513);
 }
 
 /* font-family: 'Arvo', serif;
